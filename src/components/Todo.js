@@ -19,13 +19,10 @@ export default function Todo() {
     };
 
     const handleUpdate = (e) => {
-        e.preventDefault();
-        if (edit.id) {
-            setList(list.map(task => 
-                task.id === edit.id ? { ...task, task: edit.text } : task
-            ));
-            setEdit({ id: "", text: "" });
-        }
+        setList(list.map(task => 
+            task.id === edit.id ? { ...task, task: edit.text } : task
+        ));
+        setEdit({ id: "", text: "" });
     };
 
     const totalPages = Math.ceil(list.length / tasksPerPage);
